@@ -1,0 +1,14 @@
+Thing value definition application. Can be used to store currencies ratios
+or ratios between different things for the world without money:)
+
+Usage
+---------
+
+1. Add 'valueladder' application in the ``INSTALLED_APPS`` settings:
+   
+	INSTALLED_APPS = (
+	    # ...
+	    'valueladder',
+	)
+
+3. Run 'python manage.py migrate invoices' to create DB tables (uses django-south).

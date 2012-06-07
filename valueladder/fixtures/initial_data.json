@@ -1,0 +1,78 @@
+[
+    {
+        "pk": 1, 
+        "model": "valueladder.thing", 
+        "fields": {
+            "code": "CZK"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "valueladder.thing", 
+        "fields": {
+            "code": "USD"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "valueladder.thing", 
+        "fields": {
+            "code": "EUR"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "valueladder.thingtranslation", 
+        "fields": {
+            "description": "", 
+            "title": "americk\u00fd dolar", 
+            "slug": "americky-dolar", 
+            "parent": 2, 
+            "language_code": "cs"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "valueladder.thingtranslation", 
+        "fields": {
+            "description": "", 
+            "title": "czech krown", 
+            "slug": "czech-krown", 
+            "parent": 1, 
+            "language_code": "en"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "valueladder.thingtranslation", 
+        "fields": {
+            "description": "", 
+            "title": "euro", 
+            "slug": "euro", 
+            "parent": 3, 
+            "language_code": "cs"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "valueladder.thingtranslation", 
+        "fields": {
+            "description": "", 
+            "title": "us dollar", 
+            "slug": "us-dollar", 
+            "parent": 2, 
+            "language_code": "en"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "valueladder.thingtranslation", 
+        "fields": {
+            "description": "", 
+            "title": "\u010desk\u00e1 koruna", 
+            "slug": "ceska-koruna", 
+            "parent": 1, 
+            "language_code": "cs"
+        }
+    }
+]
