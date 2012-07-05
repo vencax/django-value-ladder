@@ -2,6 +2,13 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from feincms import translations
 from django.template.defaultfilters import slugify
+from django.conf import settings
+
+class ThingObjectManager(translations.TranslatedObjectManager):
+    """ Object manager that offers get_default thing method """
+    def get_default(self):
+        return self.get(code=settings.DEFAULT_CURRENCY)
+
 
 class Thing(models.Model, translations.TranslatedObjectMixin):
     """
@@ -9,7 +16,8 @@ class Thing(models.Model, translations.TranslatedObjectMixin):
     """
     code = models.CharField(_('code'), max_length=16)
     
-    objects = translations.TranslatedObjectManager()
+    objects = ThingObjectManager()
+
 
 class ThingTranslation(translations.Translation(Thing)):
     title = models.CharField(_('category title'), max_length=32)
@@ -35,6 +43,7 @@ class ThingTranslation(translations.Translation(Thing)):
             self.slug = slugify(self.title)[:32]
 
         super(ThingTranslation, self).save(*args, **kwargs)
+
 
 class ThingValue(models.Model):
     """
