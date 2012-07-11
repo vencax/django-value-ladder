@@ -17,6 +17,10 @@ class Thing(models.Model, translations.TranslatedObjectMixin):
     code = models.CharField(_('code'), max_length=16)
     
     objects = ThingObjectManager()
+    
+    class Meta:
+        verbose_name = _('thing')
+        verbose_name_plural = _('things')
 
 
 class ThingTranslation(translations.Translation(Thing)):
@@ -50,8 +54,12 @@ class ThingValue(models.Model):
     Value ratio between the two things.
     """
     class Meta:
+        verbose_name = _('thing value')
+        verbose_name_plural = _('thing values')
         unique_together = ('thingA', 'thingB', 'ratio')
 
-    thingA = models.ForeignKey(Thing, related_name='changing_things')
-    thingB = models.ForeignKey(Thing, related_name='changed_things')
+    thingA = models.ForeignKey(Thing, verbose_name='%s A' % _('thing'), 
+                               related_name='changing_things')
+    thingB = models.ForeignKey(Thing, verbose_name='%s B' % _('thing'),
+                               related_name='changed_things')
     ratio = models.FloatField(_('value ratio between the 2'))

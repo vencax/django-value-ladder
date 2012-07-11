@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR vencax77@gmail.com, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-11 14:37+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
+
+#: models.py:17
+msgid "code"
+msgstr "kod"
+
+#: models.py:22 models.py:61 models.py:63
+msgid "thing"
+msgstr "platidlo"
+
+#: models.py:23
+msgid "things"
+msgstr "platidla"
+
+#: models.py:27
+msgid "category title"
+msgstr "název kategorie"
+
+#: models.py:28
+msgid "slug"
+msgstr "slug"
+
+#: models.py:29
+msgid "description"
+msgstr "popis"
+
+#: models.py:32
+msgid "thing translation"
+msgstr "překlad názvu"
+
+#: models.py:33
+msgid "thing translations"
+msgstr "překlady názvu"
+
+#: models.py:57
+msgid "thing value"
+msgstr "hodnota věci"
+
+#: models.py:58
+msgid "thing values"
+msgstr "hodnoty věcí"
+
+#: models.py:65
+msgid "value ratio between the 2"
+msgstr "poměr mezi těmito 2ma"
