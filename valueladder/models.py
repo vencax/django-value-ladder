@@ -4,6 +4,7 @@ from feincms import translations
 from django.template.defaultfilters import slugify
 from django.conf import settings
 
+
 class ThingObjectManager(translations.TranslatedObjectManager):
     """ Object manager that offers get_default thing method """
     def get_default(self):
@@ -15,9 +16,9 @@ class Thing(models.Model, translations.TranslatedObjectMixin):
     Represents a thing ... :)
     """
     code = models.CharField(_('code'), max_length=16)
-    
+
     objects = ThingObjectManager()
-    
+
     class Meta:
         verbose_name = _('thing')
         verbose_name_plural = _('things')
@@ -26,7 +27,8 @@ class Thing(models.Model, translations.TranslatedObjectMixin):
 class ThingTranslation(translations.Translation(Thing)):
     title = models.CharField(_('category title'), max_length=32)
     slug = models.SlugField(_('slug'), unique=True)
-    description = models.CharField(_('description'), max_length=256, blank=True)
+    description = models.CharField(_('description'), max_length=256,
+                                   blank=True)
 
     class Meta:
         verbose_name = _('thing translation')
@@ -58,7 +60,7 @@ class ThingValue(models.Model):
         verbose_name_plural = _('thing values')
         unique_together = ('thingA', 'thingB', 'ratio')
 
-    thingA = models.ForeignKey(Thing, verbose_name='%s A' % _('thing'), 
+    thingA = models.ForeignKey(Thing, verbose_name='%s A' % _('thing'),
                                related_name='changing_things')
     thingB = models.ForeignKey(Thing, verbose_name='%s B' % _('thing'),
                                related_name='changed_things')

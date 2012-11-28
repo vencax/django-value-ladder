@@ -4,13 +4,15 @@ from feincms.translations import admin_translationinline
 from .models import Thing, ThingValue
 from valueladder.models import ThingTranslation
 
-ThingTranslationInline = admin_translationinline(ThingTranslation, 
+ThingTranslationInline = admin_translationinline(ThingTranslation,
     prepopulated_fields={'slug': ('title',)})
+
 
 class ThingAdmin(admin.ModelAdmin):
     inlines = [ThingTranslationInline]
     list_display = ['__unicode__', 'code']
     search_fields = ['translations__title', 'code']
+
 
 class ThingValueAdmin(admin.ModelAdmin):
     search_fields = ['thingA', 'thingB']
@@ -18,4 +20,3 @@ class ThingValueAdmin(admin.ModelAdmin):
 
 admin.site.register(Thing, ThingAdmin)
 admin.site.register(ThingValue, ThingValueAdmin)
-
